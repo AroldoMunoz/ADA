@@ -5,19 +5,20 @@ package practica4;
 //y para el indice 2 {4+6,5+6,6+6,7+6}={10,11,12,13}
 public class EveryOther {
 	public static void everyOther(int[] list) {
-		int n=list.length;//n tamaño de la lista
+		int n=list.length;//n tamaÃ±o de la lista
 		int[] aux = new int[n];// creando lista temporal o auxiliar
 			
-		for(int i=0;i< n; i++) {
+		for(int i=0;i< n; i++) {//n veces pasa
 			// si el indice es par ,se suma a cada elemento de la lista 
 			//su valor de la posicion del indice 
 			if((i%2)==0) {
-				for(int j=0;j<n;j++)
+				for(int j=0;j<n;j++)//n veces pasa
 					aux[j]=list[j]+list[i];
 				print(aux);
 			}
 		}
-}
+	}
+	//complejidad n x n o sea O(n^2)
 	//imprime la lista  de elementos
 	public static void print(int[]list) {
 		for(int i=0;i<list.length;i++) {
