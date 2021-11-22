@@ -3,8 +3,8 @@ package practica4;
 public class TwoSum {
 	
 	public static boolean twoSum(int[] list) {
-		for(int i=0;i< list.length-1; i++) {
-			for(int j=0;j<list.length-1;j++){
+		for(int i=0;i< list.length-1; i++) {//n veces
+			for(int j=0;j<list.length-1;j++){// n veces
 				//suma 2 numeros de la lista sin sumar el mismo numero bota true si halla
 				//si no encuentra retorna false
 				if(i!=j && list[i]+list[j]==10) {
@@ -13,12 +13,13 @@ public class TwoSum {
 					return true;
 				}
 				}
-				
+			//recorre 2 veces por los 2 for n veces	
 		}
 		System.out.println("No exixte 2 numeros q sumados resulta 10");
 	return false;
 		
 	}
+	// complejidad O(n^2)
 	
 	public static void main(String []args){
 		//caso prueba
