@@ -1,5 +1,6 @@
 package practica6;
-
+//busca el numero si es cuadrado teniendo el arreglo de 1 hasta n con el dato n
+//complejidad O(log_2(n))  pues cada ves q entra al while hace una particion del arreglo en 2
 public class EsCuadrado {
 	public static int esCuadrado( int [] arreglo, int dato) {
 		 int inicio = 0;
