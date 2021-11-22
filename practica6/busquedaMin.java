@@ -10,7 +10,7 @@ public class busquedaMin {
 			 pos = (inicio+fin) / 2;
 		     dato=arreglo[pos];
 		     if ( arreglo[inicio] < dato &&dato<arreglo[fin] )
-		       return arreglo[fin];
+		       return arreglo[inicio];
 		     else if ( arreglo[inicio] >= dato ) {
 		    	 fin = pos;
 		    	  	} else {
