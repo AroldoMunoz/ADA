@@ -4,8 +4,8 @@ public class GreatesNumber {
 	public static int greateNumber(int[] list) {
 		//max es el 1er numero
 		int max=list[0];
-		//el ciclo ira desde el elemento 2 hasta tamaño del arreglo
-		for(int i=1;i< list.length-1; i++) {
+		//el ciclo ira desde el elemento 2 hasta tamaÃ±o del arreglo
+		for(int i=1;i< list.length-1; i++) { //hace n veces
 			//si el numero de la lista es mayor, este valor se pasa al max
 			if(max<list[i])
 				max=list[i];
@@ -13,6 +13,7 @@ public class GreatesNumber {
 	return max;
 		
 	}
+	//complejidad O(n)
 	
 	public static void main(String []args){
 		
