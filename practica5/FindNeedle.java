@@ -4,7 +4,7 @@ public class FindNeedle {
 	
 //programa que dice si esta needle dentro de la cadena de haystack
 	//ejempo "fgh" esta en "abcdefgh"  , es verdad
-	//tama�o de needle=n y haystack en m
+	//tamaño de needle=n y haystack en m
 	
 	public static boolean findNeedle(String needle,String haystack) {
 		int needleindex=0;
@@ -31,6 +31,7 @@ public class FindNeedle {
 		}
 		return false;
 		}
+	//tamaño de needle=n y haystack en m
 	//complejidad mxn o sea O (mn)
 		
 		public static void main(String []args){
