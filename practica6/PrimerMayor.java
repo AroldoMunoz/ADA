@@ -8,7 +8,8 @@ public class PrimerMayor {
 		 int pos;
 		 while (inicio <= fin) {
 			 pos = (inicio+fin) / 2;
-		     if ( arreglo[pos] >= dato&& arreglo[pos-1] < dato )
+			//verifica si el dato es el mayor o igual y ademas su antecesor debe ser menor para q retorne el valor
+		     if ( arreglo[pos] >= dato&& arreglo[pos-1] < dato ) 
 		       return pos;
 		     else if ( arreglo[pos] < dato ) {
 		    	 inicio = pos+1;
