@@ -9,7 +9,7 @@ public class EsCuadrado {
 		 while (inicio <= fin) {
 					 
 		     pos = (inicio+fin) / 2;
-		     if ( arreglo[pos]*arreglo[pos] == dato )
+		     if ( arreglo[pos]*arreglo[pos] == dato )//compara el dato del arreglo al cuadrado  con el dato
 		       return pos;
 		     else if ( arreglo[pos]*arreglo[pos] < dato ) {
 		  inicio = pos+1;
