@@ -3,36 +3,32 @@ import java.util.Stack;
 public class MinPareEjercicio2 {
 	/*ejercicio 2: minimun add to make parentheses valid
 	 * 
-	 * busca el tamaño de la pilacon parentesis  no validados
+	 * busca el tamaÃ±o de la pilacon parentesis  no validados
 	 * complejidad O(n)
 	 * */
 		public static int minParentesis(String array) {
 			
 			Stack <String> pila=new Stack<String>();
-			int n = array.length();//n es tamaño arreglo
-			int count=0;
+			int n = array.length();//n es tamaÃ±o arreglo
 			for (int i = 0; i<n; i++) {//recorre n veces
 				switch(array.charAt(i)) {
 					case '(':
 						pila.push("(");
-						count++;
 						break;
 					case ')':
 						if ( !pila.empty()) {
 							if(pila.peek()=="(") {
 								pila.pop();
-								count--;
 								break;
 							}
 						}
 						pila.push(")");
-						count++;
 						break;
 					default:
 						System.out.println("hay elemento diferente a '(' y ')' ");
 				}
 			}
-			return count;
+			return pila.size();
 		}
 		
 		
