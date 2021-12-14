@@ -7,32 +7,28 @@ public class RectangleCuttingEjercicio4 {
 	 * de tal manera que todas las longitudes de los lados sigan siendo números enteros. 
 	 * ¿Cuál es el número mínimo posible de movimientos?
 	 * 
-	 * relacion recurrencia
-	 * seleccionar un rectángulo y cortarlo en dos rectángulos de los cuales 1 ya es cuadrado y 
-	 * el otro procede a cortar de nuevo, hasta que sea un cuadrado o sea un rectangulo de grosor 1, 
-	 * en este ultimo caso solo el valor maximo de los lados -1 se añande al contador
-	 * 
-	 *complejidad O(log_2(ab)) 
-	 * */
+	 */
 	private static int rectangleCutt(int a, int b) {
 		int cont = 0;
 		int temp;
+		int[][] dp = new int[a+1][b+1];
 		//entra si es un rectangulo mayor a 1x1
-		while(a+b>1) {
-			if(a==b)
-				return cont;
-			if(Math.min(a, b)==1) {
-				cont=cont+Math.abs(a-b);
-				a=0;b=0;
-			}
-			else {//restamos el max menos el minimo de a,b en lo que resulta (max-min)x(min)el nuevo rectangulo
-				temp=Math.min(a, b);
-				b=Math.max(a, b)-temp;
-				a=temp;
-				cont++;
-				}
+		for (int i = 0; i <= a; i++) {
+		    for (int j = 0; j <= b; j++) {
+		      if (i == j) {
+		    	  dp[i][j] = 0;
+		      } else {
+		    	  dp[i][j] = a *b;
+		    	  for (int k = 1; k < i; k++) {
+		    		  dp[i][j] = Math.min(dp[i][j], dp[k][j]+dp[i-k][j]+1);
+		    	  }
+		    	  for (int k = 1; k < j; k++) {
+		    		  dp[i][j] = Math.min(dp[i][j], dp[i][k]+dp[i][j-k]+1);
+		    	  }
+		      }
+		    }
 		}
-		return cont;
+		return dp[a][b];
 	}
 	public static void main(String args[]) {
 		Scanner scanner = new Scanner(System.in);
@@ -41,7 +37,11 @@ public class RectangleCuttingEjercicio4 {
 		//int a=10,b=8;
 		//int a=21,b=29;
 		//int a=13,b=21;
-		int a=21,b=28;
-		System.out.println("cortes max de un rectangulo de "+a+" y "+b +" es :"+rectangleCutt(a,b));
+		//int a=21,b=28;
+		//System.out.println("cortes max de un rectangulo de "+a+" y "+b +" es :"+rectangleCutt(a,b));
+		int a = scanner.nextInt();
+		int b = scanner.nextInt();
+		//System.out.println("cortes max de un rectangulo de "+a+" y "+b +" es :"+rectangleCutt(a,b));
+		System.out.println(rectangleCutt(a,b));
 	}
 }
